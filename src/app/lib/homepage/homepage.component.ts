@@ -9,6 +9,8 @@ import { saveWords } from '../state/state.actions';
 })
 export class HomepageComponent implements OnInit {
 	wordToFind: string = 'waitress';
+	filters: string[] = [ 'Title', 'Author', 'Description' ];
+	filter: string = '';
 
 	constructor(private store$: Store<any>) {}
 
@@ -22,5 +24,9 @@ export class HomepageComponent implements OnInit {
 		} else {
 			alert('Field cant be empty: Please fill field');
 		}
+	}
+
+	updateFilter(filter: string) {
+		this.filter = filter;
 	}
 }

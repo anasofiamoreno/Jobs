@@ -18,8 +18,7 @@ export class WorkListComponent implements OnInit {
 	selectedNitems: string = '10';
 	page: number = 1;
 	totalItems: number = 0;
-	filter: string = '';
-	filters: string[] = [ 'Title', 'Author', 'Description' ];
+	@Input() filter: string = '';
 	results: boolean = false;
 	loading: boolean = false;
 
@@ -34,7 +33,7 @@ export class WorkListComponent implements OnInit {
 			this.loading = false;
 			this.works = data.worklist;
 			this.totalItems = data.totalItems;
-			this.results = data.worklist.length() > 0 ? true : false;
+			this.results = data.worklist.length > 0 ? true : false;
 		});
 
 		this.store$.pipe(select(selectWords)).subscribe((data) => {
@@ -75,5 +74,18 @@ export class WorkListComponent implements OnInit {
 
 	updateFilter(filter: string) {
 		this.filter = filter;
+	}
+
+	collectionSize(totalItems: number): number {
+		if (totalItems >= 300) {
+			if (parseInt(this.selectedNitems) === 20) {
+				return 300;
+			} else if (parseInt(this.selectedNitems) === 10) {
+				return 200;
+			} else if (parseInt(this.selectedNitems) === 5) {
+				return 100;
+			}
+		}
+		return totalItems;
 	}
 }

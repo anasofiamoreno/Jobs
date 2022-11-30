@@ -1,7 +1,26 @@
 .searchcontainer {
-  width: 100%;
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.searchcontainer > input {
+  width: 40%;
+}
+
+.searchcontainer > select {
+  width: 150px;
+  margin: 0px 10px 0px 10px;
+}
+
+.searchcontainer > p {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  align-items: center;
+  text-align: center;
 }
 
 .finder {

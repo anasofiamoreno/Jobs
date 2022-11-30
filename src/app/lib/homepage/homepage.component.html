@@ -2,10 +2,15 @@
   <h1 class="h1 text-center font-weight-bold">Job Finder</h1>
 
   <div class="searchcontainer">
-      <input #word class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <input #word class="form-control me-2" type="search" placeholder="Search" aria-label="Search" (keyup.enter)="findWord(word.value)">
       <button class="btn btn-outline-success" (click)="findWord(word.value)">Search</button>
+      <select #filterstag class="form-select" aaria-label="Default select example" (change)="updateFilter(filterstag.value)" label="'Filter'">     
+        <option selected value="''">All</option>
+        <option *ngFor="let filter of filters" [value]="filter">{{filter}}</option>
+      </select>
+      <p class="text-center">Filter</p>
   </div>
 
-  <app-work-list [wordToFind]="wordToFind"></app-work-list>
+  <app-work-list [wordToFind]="wordToFind" [filter]="filter"></app-work-list>
 
 </div>
