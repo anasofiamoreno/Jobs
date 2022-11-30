@@ -1,0 +1,31 @@
+.main-paginator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+select{
+  height: 40px;
+}
+
+.ngb-pagination {
+display: flex;
+align-items: center;
+}
+
+p {
+  text-align: center;
+  width: 300px;
+}
+
+.list {
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+}
+
+.disable{
+  background: #ccc;
+  pointer-events: none;
+}

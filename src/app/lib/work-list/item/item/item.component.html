@@ -1,0 +1,24 @@
+<div class="border border-1 my-auto card" (click)="openLink(item?.URL)">
+  <div class="d-flex title">
+    <p class="mx-3">Title</p> <span>{{item?.title}}</span>
+  </div>
+  <div class="d-flex detail">
+    <div class="d-flex publisher mx-3">
+      <p>Publishe:</p>
+      <span>{{item?.publisher}}</span>
+    </div>
+    <div class="d-flex type">
+      <p>Type: </p>
+      <span>{{item?.type}}</span>
+    </div>
+    <div class="d-flex author" *ngIf="item?.author">
+      <p>Author: </p>
+      <span>{{(item?.author)?.[0]?.given}} {{(item?.author)?.[0]?.family}}</span>
+    </div>
+  </div>
+
+  <div class="d-flex desc" *ngIf="item?.description">
+    <p>Description: </p>
+    <span>{{item?.description}}</span>
+  </div>
+</div>

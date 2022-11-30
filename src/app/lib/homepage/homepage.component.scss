@@ -1,0 +1,24 @@
+.searchcontainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.finder {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+
+.main-paginator {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.list {
+  width: 90%;
+  height: 80%;
+  border-width: 5px;
+  border-style: double;
+}

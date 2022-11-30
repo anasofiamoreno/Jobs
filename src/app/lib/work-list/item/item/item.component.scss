@@ -1,0 +1,64 @@
+.card {
+  width: 75%;
+}
+
+.card:hover{
+  background-color: gold;
+  transition: .5s;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-around;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+.title > p {
+  font-weight: bold;
+}
+
+.publisher > p {
+  margin-right: 10px;
+}
+
+.publisher > span {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.type > p {
+  margin-right: 10px;
+}
+
+.type > span {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.author > p {
+  margin-right: 10px;
+}
+
+.author > span {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.desc {
+  display: flex;
+  justify-content: center;
+}
+
+.desc > p {
+  margin-right: 10px;
+}
+
+.desc > span {
+  font-style: italic;
+  text-decoration: underline;
+  width: 80%;
+}
