@@ -1,9 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { works, work } from './worl-list-interfaces';
-import { WorkListService } from '../services/work-list.service';
-import { Observable, Subscription } from 'rxjs';
+import { work } from './worl-list-interfaces';
 import { select, Store } from '@ngrx/store';
-import { loadWorkList, saveWorkList } from '../state/state.actions';
+import { loadWorkList } from '../state/state.actions';
 import { selectWords, selectWorkList } from '../state/state.selectors';
 
 @Component({
@@ -22,7 +20,7 @@ export class WorkListComponent implements OnInit {
 	results: boolean = false;
 	loading: boolean = false;
 
-	constructor(private workListService: WorkListService, private store$: Store<any>) {}
+	constructor(private store$: Store<any>) {}
 
 	ngOnInit(): void {
 		this.store$.dispatch(
@@ -46,8 +44,7 @@ export class WorkListComponent implements OnInit {
 		});
 	}
 
-	updatePage(nItems: any): void {
-		console.log('yes');
+	updatePage(nItems: string): void {
 		this.loading = true;
 		this.selectedNitems = nItems;
 		this.store$.dispatch(
@@ -61,7 +58,6 @@ export class WorkListComponent implements OnInit {
 
 	changePage() {
 		this.loading = true;
-		console.log(this.page);
 		this.store$.dispatch(
 			loadWorkList({
 				nItems: this.selectedNitems,
