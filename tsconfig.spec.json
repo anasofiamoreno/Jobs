@@ -4,6 +4,7 @@
   "compilerOptions": {
       "baseUrl": "./src",
       "outDir": "./out-tsc/spec",
+      "module": "CommonJs",
       "types": [
           "jest", //cambiar esta línea de jasmine a jest
           "node"
